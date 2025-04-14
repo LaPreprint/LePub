@@ -9,8 +9,8 @@ The core file is `typreprint.typ`.
 ### Typst
 - Specification: `typst.toml`
 - Entrypoint: 
-    - `from_manual.typ` (without YAML frontmatter)
-    - `from_yaml.typ` (with YAML frontmatter)
+    - `typst-template/from_manual.typ` (without YAML frontmatter)
+    - `typst-template/from_yaml.typ` (with YAML frontmatter)
 - Extras: `frontmatter.yml`
 
 ### Quarto 
