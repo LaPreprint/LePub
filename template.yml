@@ -1,0 +1,41 @@
+myst: v1
+kind: typst
+title: TyPreprint Typst Template
+description: A Typst Template for Preprints
+template: myst-show.typ
+files:
+  - myst-show.typ
+  - typreprint.typ
+authors:
+  - name: Mikkel Roald-Arbøl
+    github: roaldarbol
+    affiliations:
+      - University of Sussex
+version: 0.0.1
+license: MIT
+tags:
+  - preprint
+  - article
+  - paper
+thumbnail: ./thumbnail.png
+github: https://github.com/lapreprint/typreprint
+doc:
+  - id: title
+    required: true
+  - id: authors
+    required: true
+  - id: subtitle
+  - id: short_title
+  - id: open_access
+  - id: keywords
+  - id: doi
+  - id: github
+  - id: first_page
+parts:
+  - id: abstract
+    description: >
+      An abstract is a short summary of your research paper or report.
+    max_words: 500
+    required: true
+  - id: acknowledgements
+  - id: declaration

@@ -1,0 +1,19 @@
+[package]
+name = "TyPreprint"
+version = "0.0.1"
+compiler = "0.13.1"
+entrypoint = "cv.typ"
+authors = [ "Mikkel Roald-Arbøl <https://roald-arboel.com>"]
+license = "Apache-2.0"
+description = "A Typst Template for Preprints"
+keywords = ["preprint", "article", "paper", "science", "academic", "research"]
+categories = ["article"]
+disciplines = []
+homepage = "https://github.com/lapreprint/typreprint"
+repository = "https://github.com/lapreprint/typreprint"
+
+
+[template]
+path = "typst-template"
+entrypoint = "from-yaml.typ"
+# thumbnail = "assets/thumbnail_1.png"

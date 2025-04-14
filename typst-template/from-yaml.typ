@@ -1,6 +1,6 @@
 #import "../typreprint.typ": *
 #let fm = pubmatter.load(yaml("frontmatter.yml"))
-#show: template.with(
+#show: typreprint.with(
   frontmatter: fm,
   theming: (
     font-body: "libertinus serif",

@@ -1,5 +1,5 @@
 #import "../typreprint.typ": *
-#show: template.with(
+#show: typreprint.with(
   theming: (
     font-body: "libertinus serif",
     line-numbers: true
