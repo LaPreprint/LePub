@@ -34,7 +34,7 @@
   },
 )
 
-#let template(
+#let typreprint(
   frontmatter: (),
   heading-numbering: "1.1.1",
   theming: (),
