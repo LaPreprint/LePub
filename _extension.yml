@@ -1,0 +1,13 @@
+title: TyPreprint
+author: Mikkel Roald-Arbøl
+version: 0.0.1
+quarto-required: ">=1.4.11"
+contributes:
+  formats:
+    typst:
+      template: quarto-template.typ
+      template-partials: 
+        - typreprint.typ
+        - quarto-show.typ
+      # disable quarto refs div injection
+      cite-method: natbib
