@@ -1,3 +1,5 @@
+# TyPreprint
+
 Currently under development.
 
 I'm building a repository that aims to create a template that serves Typst, Quarto and MyST natively. Please come back soon.
