@@ -1,17 +1,23 @@
 # TyPreprint
 
-Currently under development.
+**Currently under active development.**
 
-I'm building a repository that aims to create a template that serves Typst, Quarto and MyST natively. Please come back soon.
+The idea is to try building a template that serves Typst, Quarto and MyST all at once - natively. Please come back soon.
 
-The core file is `typreprint.typ`.
+## Usage
+
+Not yet...
+
+## Development
+
+Since we're developing for three different engines at once, here's a quick overview of which files belong to which engine. The core file is `typreprint.typ` - when that is updated, then it will be updated for all engines (things may of course still need to be tweaked in those too, but there is no duplication of work).
 
 ### Typst
 - Specification: `typst.toml`
 - Entrypoint: 
     - `typst-template/from_manual.typ` (without YAML frontmatter)
     - `typst-template/from_yaml.typ` (with YAML frontmatter)
-- Extras: `frontmatter.yml`
+- Extras: `typst-template/frontmatter.yml`
 
 ### Quarto 
 - Specification: `_extension.yml`
