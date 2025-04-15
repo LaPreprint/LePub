@@ -15,13 +15,13 @@ Since we're developing for three different engines at once, here's a quick overv
 ### Typst
 - Specification: `typst.toml`
 - Entrypoint: 
-    - `typst-template/from_manual.typ` (without YAML frontmatter)
-    - `typst-template/from_yaml.typ` (with YAML frontmatter)
+    - `typst-template/from-manual.typ` (without YAML frontmatter)
+    - `typst-template/from-yaml.typ` (with YAML frontmatter)
 - Extras: `typst-template/frontmatter.yml`
 
 ### Quarto 
 - Specification: `_extension.yml`
-- Entrypoint: `quarto_template.typ`
+- Entrypoint: `quarto-template.typ`
 - Partials: `quarto-show.typ`
 
 ### MyST
