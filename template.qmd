@@ -5,11 +5,11 @@ authors:
     email: "howard@math.sc.edu"
     url: "www.math.sc.edu/~howard"
     affiliations: 
-    #   - name: University of South Carolina
-    #     department: Department of Mathematics
-    #     city: Columbia
-    #     state: SC
-    #     postal-code: 29208
+      - name: University of South Carolina
+        department: Department of Mathematics
+        city: Columbia
+        state: SC
+        postal-code: 29208
 abstract: |
   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
   Curabitur ex justo, pretium nec ante mattis, ultricies
@@ -17,8 +17,7 @@ abstract: |
   fermentum a lorem. Vivamus sit amet est interdum, eleifend
   libero in, rutrum lorem. 
 format:
-  typst:
-    template: quarto-template.typ
+  typreprint-typst: default
 bibliography: refs.bib
 ---
 
