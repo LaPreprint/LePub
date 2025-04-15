@@ -1,7 +1,17 @@
-#show: typreprint.with(
-  $if(doc.title)$
-    title: "$doc.title$",
-  $endif$
+#show: doc => typreprint.with(
+  frontmatter: (
+    $if(title)$
+      title: "$title$",
+    $endif$
+    $if(abstract)$
+      abstract: "$abstract$"
+    $endif$
+  )
+  // options: (
+  //   $if(line-numbers)$
+  //     line-numbers: "$line-numbers"
+  //     $endif$
+  // )
 )
 // $if(by-author)$
 //    authors: (

@@ -1,4 +1,4 @@
-// $definitions.typ()$
+$definitions.typ()$
 
 $typreprint.typ()$
 
