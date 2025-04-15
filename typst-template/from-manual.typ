@@ -1,6 +1,6 @@
 #import "../typreprint.typ": *
 #show: typreprint.with(
-  theming: (
+  options: (
     font-body: "libertinus serif",
     line-numbers: true
   ),

@@ -2,7 +2,7 @@
 #let fm = pubmatter.load(yaml("frontmatter.yml"))
 #show: typreprint.with(
   frontmatter: fm,
-  theming: (
+  options: (
     font-body: "libertinus serif",
     line-numbers: true
   )

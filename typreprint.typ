@@ -37,7 +37,8 @@
 #let typreprint(
   frontmatter: (),
   heading-numbering: "1.1.1",
-  theming: (),
+  options: (),
+  line-numbers: false,
   kind: none,
   paper-size: "us-letter",
   // The path to a bibliography file if you want to cite some external works.
@@ -48,7 +49,7 @@
 ) = {
   let fm = pubmatter.load(frontmatter)
   let dates;
-  if ("date" in fm and type(fm.date) == "datetime") {
+  if ("date" in fm and type(fm.date) == datetime) {
     dates = ((title: "Published", date: fm.date),)
   // } else if (type(date) == "dictionary") {
   //   dates = (date,)
@@ -101,15 +102,10 @@
   }
 
   // Set the body font.
-  set text(font: theming.font-body, size: 9pt)
+  set text(font: options.font-body, size: 9pt)
   // Configure equation numbering and spacing.
   set math.equation(numbering: "(1)")
   show math.equation: set block(spacing: 1em)
-
-  // Line numbering
-  if (theming.line-numbers == true){
-    set par.line(numbering: "1")
-  }
 
   // Configure lists.
   set enum(indent: 10pt, body-indent: 9pt)
@@ -165,7 +161,7 @@
       box(
         width: 27%,
         {
-          if (type(logo) == "content") {
+          if (type(logo) == content) {
             logo
           } else {
             image(logo, width: 100%)
@@ -272,6 +268,9 @@
     set block(spacing: 0.9em)
     it
   }
+
+  // Line numbering
+  set par.line(numbering: "1") if options.line-numbers == true
 
   // Display the paper's contents.
   body
