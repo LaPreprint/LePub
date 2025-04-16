@@ -9,5 +9,3 @@ contributes:
       template-partials: 
         - typreprint.typ
         - quarto-show.typ
-      # disable quarto refs div injection
-      cite-method: natbib

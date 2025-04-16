@@ -1,2 +1,6 @@
 *.pdf
 *.DS_Store
+# pixi environments
+.pixi
+*.egg-info
+**/template-files

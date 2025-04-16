@@ -1,6 +1,6 @@
 [package]
 name = "TyPreprint"
-version = "0.0.1"
+version = "1.0.0"
 compiler = "0.13.1"
 entrypoint = "cv.typ"
 authors = [ "Mikkel Roald-Arbøl <https://roald-arboel.com>"]

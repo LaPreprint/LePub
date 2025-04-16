@@ -1,6 +1,6 @@
 myst: v1
 kind: typst
-title: TyPreprint Typst Template
+title: TyPreprint
 description: A Typst Template for Preprints
 template: myst-show.typ
 files:
