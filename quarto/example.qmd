@@ -18,8 +18,9 @@ abstract: |
   libero in, rutrum lorem. 
 format:
   lepub-typst:
-    keep-typ: false
+    keep-typ: true
     line-numbers: false
+    theme-color: "#FF5733"
 bibliography: refs.bib
 ---
 

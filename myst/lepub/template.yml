@@ -42,5 +42,7 @@ parts:
 options:
   - type: boolean
     id: line-numbers
-    default: false
     description: Should the article show line numbers
+  - type: string
+    id: theme-color
+    description: Color used for the theme

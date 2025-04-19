@@ -73,8 +73,15 @@
   [# endif #]
   ),
   options: (
-    font-body: "libertinus serif",
-    line-numbers: [-options.line-numbers-]
+  [# if options.font-body #]
+    font-body: "[-options.font-body-]",
+  [# endif #]
+  [# if options.line-numbers #]
+    line-numbers: [-options.line-numbers-],
+  [# endif #]
+  [# if options.theme-color #]
+    theme-color: "[-options.theme-color-]"
+  [# endif #]
   )
 )
 

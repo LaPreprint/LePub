@@ -2,7 +2,8 @@
 #show: lepub.with(
   options: (
     font-body: "libertinus serif",
-    line-numbers: true
+    line-numbers: true,
+    theme-color: "#FF5733"
   ),
   frontmatter: (
     title: "vak: a neural network framework for researchers studying animal acoustic communication",

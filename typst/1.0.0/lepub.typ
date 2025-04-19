@@ -1,43 +1,9 @@
 #import "@preview/pubmatter:0.2.0"
 
-#let leftCaption(it) = context {
-  set text(size: 8pt)
-  set align(left)
-  set par(justify: true)
-  text(weight: "bold")[#it.supplement #it.counter.display(it.numbering)]
-  "."
-  h(4pt)
-  set text(fill: black.lighten(20%), style: "italic")
-  it.body
-}
-
-#let fullwidth(it) = {
-  place(top, dx: -30%, float: true, scope: "parent",
-  box(width: 135%, it))
-}
-
-#let smallTableStyle = (
-  map-cells: cell => {
-    if (cell.y == 0) {
-      return (..cell, content: strong(text(cell.content, 5pt)))
-    }
-    (..cell, content: text(cell.content, 5pt))
-  },
-  auto-vlines: false,
-  map-hlines: line => {
-    if (line.y == 0 or line.y == 1) {
-      line.stroke = gray + 1pt;
-    } else {
-      line.stroke = 0pt;
-    }
-    return line
-  },
-)
-
 #let lepub(
   frontmatter: (),
-  heading-numbering: "1.1.1",
   options: (),
+  heading-numbering: "1.1.1",
   kind: none,
   paper-size: "us-letter",
   // The path to a bibliography file if you want to cite some external works.
@@ -46,19 +12,37 @@
   // The paper's content.
   body
 ) = {
+
+  // Here we need to specify the default options in case none are being provided
+  let default-options = (
+      theme-color: "#2453A1",
+      font-body: "libertinus serif",
+      line-numbers: false
+    )
+
+  if (type(options) == array) {
+    options = options.to-dict()
+  }
+
+  let options = default-options + options
+
+  // Load frontmatter
   let fm = pubmatter.load(frontmatter)
+
+  // Process dates
   let dates;
   if ("date" in fm and type(fm.date) == datetime) {
     dates = ((title: "Published", date: fm.date),)
-  // } else if (type(date) == "dictionary") {
-  //   dates = (date,)
   } else {
     dates = date
   }
 
+  // Process colors
+  let theme-color = rgb(options.theme-color.replace("\\", ""))
+
   // Set document metadata.
   set document(title: fm.title, author: fm.authors.map(author => author.name))
-  let theme = (color: rgb("#2453A1"), font: "libertinus serif")
+  let theme = (color: theme-color, font: options.font-body)
   if (page-start != none) {counter(page).update(page-start)}
   state("THEME").update(theme)
   set page(
@@ -170,6 +154,18 @@
     )
   }
 
+  // Creates custom contexts
+  let left-caption(it) = context {
+    set text(size: 8pt)
+    set align(left)
+    set par(justify: true)
+    text(weight: "bold")[#it.supplement #it.counter.display(it.numbering)]
+    "."
+    h(4pt)
+    set text(fill: black.lighten(20%), style: "italic")
+    it.body
+  }
+
 
   // Title and subtitle
   pubmatter.show-title-block(fm)
@@ -257,7 +253,7 @@
       set align(left)
       block(sticky: true, fill: luma(240), width: 100%, inset: 10pt, radius: 1pt, it)
   }
-  show figure.caption: leftCaption
+  show figure.caption: left-caption
   show figure.where(kind: "table"): set figure.caption(position: top)
   set figure(placement: auto)
 

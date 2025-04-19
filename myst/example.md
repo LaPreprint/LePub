@@ -16,7 +16,7 @@ abstract: |
 exports:
   - format: typst
     template: myst/lepub
-    line-numbers: true  
+    theme-color: "#FF5733"
 ---
 
 ## Introduction

@@ -10,8 +10,9 @@ copy-to-typst = "cp lepub.typ typst/1.0.0"
 copy-to-quarto = "cp lepub.typ quarto/_extensions/lepub"
 copy-to-myst = "cp lepub.typ myst/lepub"
 copy = { depends-on = ["copy-to-typst", "copy-to-quarto", "copy-to-myst"] }
-quarto-render = "quarto render quarto/example.qmd"
-myst-render = "myst build myst/example.md"
+render-typst = { cmd = "typst compile typst/1.0.0/template/from-yaml.typ --root ..", depends-on = "copy" }
+render-quarto = { cmd = "quarto render quarto/example.qmd", depends-on = "copy" }
+render-myst = { cmd = "myst build myst/example.md", depends-on = "copy" }
 
 [dependencies]
 mystmd = ">=1.3.25,<2"

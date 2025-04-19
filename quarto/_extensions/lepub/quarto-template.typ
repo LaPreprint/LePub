@@ -1,6 +1,6 @@
 $definitions.typ()$
 
-$typreprint.typ()$
+$lepub.typ()$
 
 $quarto-show.typ()$
 

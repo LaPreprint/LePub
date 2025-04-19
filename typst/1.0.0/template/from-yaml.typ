@@ -1,10 +1,11 @@
 #import "../lepub.typ": *
 #let fm = pubmatter.load(yaml("frontmatter.yml"))
-#show: typreprint.with(
+#show: lepub.with(
   frontmatter: fm,
   options: (
     font-body: "libertinus serif",
-    line-numbers: true
+    line-numbers: true,
+    theme-color: "#FF5733"
   )
 )
 

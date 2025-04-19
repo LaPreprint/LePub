@@ -1,4 +1,4 @@
-#show: typreprint.with(
+#show: lepub.with(
   frontmatter: (
     $if(title)$
       title: "$title$",
@@ -26,7 +26,12 @@
     $endif$
   ),
   options: (
-    font-body: "libertinus serif",
-    line-numbers: $line-numbers$
+    font-body: "$font-body$",
+  $if(line-numbers)$
+    line-numbers: $line-numbers$,
+  $endif$
+  $if(theme-color)$
+    theme-color: "$theme-color$"
+  $endif$
   )
 )
