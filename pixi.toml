@@ -14,6 +14,10 @@ render-typst = { cmd = "typst compile typst/1.0.0/template/from-yaml.typ --root 
 render-quarto = { cmd = "quarto render quarto/example.qmd", depends-on = "copy" }
 render-myst = { cmd = "myst build myst/example.md", depends-on = "copy" }
 
+[tasks.new-name]
+args = [ {"arg" = "new-name", "default" = "lepub" }]
+cmd = "find -type f ( -name \"*.md\" -o -name \"*.qmd\" -o -name \"*.yaml\" -o -name \"*.typ\" -o -name \"*.toml\" -o ) -exec grep -l \"lepub\" {} ; | xargs sed -i \"s/lepub/{{ new-name }}/g\""
+
 [dependencies]
 typst = ">=0.13.1,<0.14"
 mystmd = ">=1.3.25,<2"
