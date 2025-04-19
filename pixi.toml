@@ -15,7 +15,7 @@ render-quarto = { cmd = "quarto render quarto/example.qmd", depends-on = "copy" 
 render-myst = { cmd = "myst build myst/example.md", depends-on = "copy" }
 
 [tasks.new-name]
-args = [ {"arg" = "new-name", "default" = "lepub" }]
+args = ["new-name"]
 cmd = "find -type f ( -name \"*.md\" -o -name \"*.qmd\" -o -name \"*.yaml\" -o -name \"*.typ\" -o -name \"*.toml\" -o ) -exec grep -l \"lepub\" {} ; | xargs sed -i \"s/lepub/{{ new-name }}/g\""
 
 [dependencies]
