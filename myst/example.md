@@ -13,6 +13,11 @@ abstract: |
   ultricies magna. Duis neque nulla, feugiat a consectetur id,
   fermentum a lorem. Vivamus sit amet est interdum, eleifend
   libero in, rutrum lorem. 
+github: https://github.com/curvenote-templates/msa/blob/main/msa.typ
+data_availability: The data is available of course.
+acknowledgments: |
+  I would like to thank a lot of people.
+license: CC-BY-4.0
 exports:
   - format: typst
     template: myst/lepub

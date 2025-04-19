@@ -1,32 +1,78 @@
 #show: lepub.with(
   frontmatter: (
-    $if(title)$
-      title: "$title$",
-    $endif$
-    $if(by-author)$
-      authors: (
-      $for(by-author)$
+    title: "$title$",
+    abstract: [
+      $abstract$
+    ],
+  $if(subtitle)$
+    subtitle: "$subtitle$",
+  $endif$
+  $if(short_title)$
+    short-title: "$short_title$",
+  $endif$
+  $if(open_access)$
+    open-access: $open_access$,
+  $endif$
+  $if(github)$
+    github: "$github$",
+  $endif$
+  $if(doi)$
+    doi: "$doi$",
+  $endif$
+  $if(date)$
+    date: datetime(
+      year: $date.year$,
+      month: $date.month$,
+      day: $date.day$,
+    ),
+  $endif$
+  $if(keywords)$
+    keywords: (
+      $for(keywords)$
+      "$it$",
+      $endfor$
+    ),
+  $endif$
+    authors: (
+    $for(authors)$
       (
         name: "$it.name.literal$",
+      $if(it.orcid)$
+        orcid: "$it.orcid$",
+      $endif$
+      $if(it.email)$
         email: "$it.email$",
-        url: "$it.url$",
-        $for(it.affiliations/first)$department: [$it.department$],
-        organization: [$it.name$],
-        location: [$it.city$, $it.region$ $it.postal-code$],
-        $endfor$
-      )$sep$,
-      $endfor$,
+      $endif$
+      $if(it.affiliations)$
+        affiliations: (
+          $for(it.affiliations)$
+          "$it.index$",
+          $endfor$
+        ),
+      $endif$
       ),
-    $endif$
-    $if(abstract)$
-      abstract: [$abstract$],
-    $endif$
-    $if(bibliography)$
-      bibliography-file: "$bibliography$",
-    $endif$
+    $endfor$
+    ),
+    affiliations: (
+    $for(affiliations)$ 
+      (
+        id: "$it.index$",
+        name: "$it.name$",
+      ),
+    $endfor$
+    ),
+  $if(license)$
+    license: (
+      id: "$license.id$", 
+      name: "$license.name$", 
+      url: "$license.url$"
+    )
+  $endif$
   ),
   options: (
+  $if(font-body)$
     font-body: "$font-body$",
+  $endif$
   $if(line-numbers)$
     line-numbers: $line-numbers$,
   $endif$

@@ -39,6 +39,7 @@ parts:
     required: true
   - id: acknowledgements
   - id: declaration
+  - id: data_availability
 options:
   - type: boolean
     id: line-numbers

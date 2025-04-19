@@ -2,6 +2,7 @@
 title: "Mathematical Theorems"
 authors: 
   - name: Ralph Howard
+    orcid: 0000-0003-2550-0012
     email: "howard@math.sc.edu"
     url: "www.math.sc.edu/~howard"
     affiliations: 
@@ -15,10 +16,14 @@ abstract: |
   Curabitur ex justo, pretium nec ante mattis, ultricies
   ultricies magna. Duis neque nulla, feugiat a consectetur id,
   fermentum a lorem. Vivamus sit amet est interdum, eleifend
-  libero in, rutrum lorem. 
+  libero in, rutrum lorem.
+acknowledgments: |
+  I would like to thank a lot of people.
+license: CC-BY-4.0
+open_access: true
 format:
   lepub-typst:
-    keep-typ: true
+    keep-typ: false
     line-numbers: false
     theme-color: "#FF5733"
 bibliography: refs.bib
