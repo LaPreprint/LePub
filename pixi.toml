@@ -1,19 +1,20 @@
 [workspace]
 authors = ["Mikkel Roald-Arbøl <github.ggb9a@simplelogin.co>"]
 channels = ["conda-forge"]
-name = "TyPreprint"
+name = "LePub"
 platforms = ["osx-64"]
 version = "0.1.0"
 
 [tasks]
-copy-to-typst = "cp typreprint.typ typst/1.0.0"
-copy-to-quarto = "cp typreprint.typ quarto/_extension"
-copy-to-myst = "cp typreprint.typ myst"
+copy-to-typst = "cp lepub.typ typst/1.0.0"
+copy-to-quarto = "cp lepub.typ quarto/_extensions/lepub"
+copy-to-myst = "cp lepub.typ myst/lepub"
 copy = { depends-on = ["copy-to-typst", "copy-to-quarto", "copy-to-myst"] }
-quarto-render = "quarto render quarto/template.qmd"
+quarto-render = "quarto render quarto/example.qmd"
+myst-render = "myst build myst/example.md"
 
 [dependencies]
-# quarto = ">=1.6.43,<2"
-# mystmd = ">=1.3.25,<2"
-# typst = ">=0.13.1,<0.14"
-# imagemagick = ">=7.1.1_47,<8"
+mystmd = ">=1.3.25,<2"
+typst = ">=0.13.1,<0.14"
+imagemagick = ">=7.1.1_47,<8"
+# quarto = ">=1.7.0,<2"

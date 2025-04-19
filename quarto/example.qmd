@@ -17,7 +17,9 @@ abstract: |
   fermentum a lorem. Vivamus sit amet est interdum, eleifend
   libero in, rutrum lorem. 
 format:
-  typreprint-typst: default
+  lepub-typst:
+    keep-typ: false
+    line-numbers: false
 bibliography: refs.bib
 ---
 

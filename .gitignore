@@ -4,3 +4,4 @@
 .pixi
 *.egg-info
 **/template-files
+_build

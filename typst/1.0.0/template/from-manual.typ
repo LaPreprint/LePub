@@ -1,5 +1,5 @@
-#import "../typreprint.typ": *
-#show: typreprint.with(
+#import "../lepub.typ": *
+#show: lepub.with(
   options: (
     font-body: "libertinus serif",
     line-numbers: true

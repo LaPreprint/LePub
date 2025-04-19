@@ -27,6 +27,6 @@
   ),
   options: (
     font-body: "libertinus serif",
-    line-numbers: true
+    line-numbers: $line-numbers$
   )
 )

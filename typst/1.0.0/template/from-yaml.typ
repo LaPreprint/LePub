@@ -1,4 +1,4 @@
-#import "../typreprint.typ": *
+#import "../lepub.typ": *
 #let fm = pubmatter.load(yaml("frontmatter.yml"))
 #show: typreprint.with(
   frontmatter: fm,

@@ -1,11 +1,11 @@
 myst: v1
 kind: typst
-title: TyPreprint
-description: A Typst Template for Preprints
-template: myst-show.typ
+title: LePub
+description: A Typst Template for Research Articles
+template: myst-template.typ
 files:
-  - myst-show.typ
-  - typreprint.typ
+  - myst-template.typ
+  - lepub.typ
 authors:
   - name: Mikkel Roald-Arbøl
     github: roaldarbol
@@ -18,7 +18,7 @@ tags:
   - article
   - paper
 thumbnail: ./thumbnail.png
-github: https://github.com/lapreprint/typreprint
+github: https://github.com/lapreprint/lepub
 doc:
   - id: title
     required: true
@@ -39,3 +39,8 @@ parts:
     required: true
   - id: acknowledgements
   - id: declaration
+options:
+  - type: boolean
+    id: line-numbers
+    default: false
+    description: Should the article show line numbers

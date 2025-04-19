@@ -1,16 +1,16 @@
 [package]
-name = "TyPreprint"
+name = "LePub"
 version = "1.0.0"
 compiler = "0.13.1"
 entrypoint = "cv.typ"
 authors = [ "Mikkel Roald-Arbøl <https://roald-arboel.com>"]
 license = "Apache-2.0"
-description = "A Typst Template for Preprints"
+description = "A Typst Template for Research Articles"
 keywords = ["preprint", "article", "paper", "science", "academic", "research"]
 categories = ["article"]
 disciplines = []
-homepage = "https://github.com/lapreprint/typreprint"
-repository = "https://github.com/lapreprint/typreprint"
+homepage = "https://github.com/lapreprint/lepub"
+repository = "https://github.com/lapreprint/lepub"
 
 
 [template]
