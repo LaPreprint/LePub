@@ -21,6 +21,10 @@ acknowledgments: |
   I would like to thank a lot of people.
 license: CC-BY-4.0
 open_access: true
+keywords:
+  - Mathemetics
+  - Models
+  - Equations
 format:
   lepub-typst:
     keep-typ: false
