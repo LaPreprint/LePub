@@ -38,7 +38,6 @@
   frontmatter: (),
   heading-numbering: "1.1.1",
   options: (),
-  line-numbers: false,
   kind: none,
   paper-size: "us-letter",
   // The path to a bibliography file if you want to cite some external works.
