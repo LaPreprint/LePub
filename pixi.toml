@@ -14,9 +14,9 @@ render-typst = { cmd = "typst compile typst/1.0.0/template/from-yaml.typ --root 
 render-quarto = { cmd = "quarto render quarto/example.qmd", depends-on = "copy" }
 render-myst = { cmd = "myst build myst/example.md", depends-on = "copy" }
 
-[tasks.new-name]
+[tasks.rename]
 args = ["new-name"]
-cmd = "find -type f ( -name \"*.md\" -o -name \"*.qmd\" -o -name \"*.yaml\" -o -name \"*.typ\" -o -name \"*.toml\" -o ) -exec grep -l \"lepub\" {} ; | xargs sed -i \"s/lepub/{{ new-name }}/g\""
+cmd = "find . -type f -name \"*.md\" -o -name \"*.qmd\" -o -name \"*.yaml\" -o -name \"*.typ\" -o -name \"*.toml\" | xargs -I{} sh -c 'if grep -q \"lepub\" {}; then sed -i \"s/lepub/{{ new-name }}/g\" {}; echo \"Updated: {}\"; fi'"
 
 [dependencies]
 typst = ">=0.13.1,<0.14"

@@ -6,7 +6,18 @@ The idea is to try building a template that serves Typst, Quarto and MyST all at
 
 ## Usage
 
-Not yet...
+### Quarto
+```
+quarto add lapreprint/lepub/quarto
+```
+
+Then use `lepub-typst` as format where the options can also be specified:
+```yaml
+format:
+    lepub-typst:
+        line-numbers: true
+```
+
 
 ```yaml
 title: str
