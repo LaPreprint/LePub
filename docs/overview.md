@@ -1,4 +1,4 @@
-If you are want to customize the template, or make your own, we have attempted to make it as easy as possible. We use [pixi](https://pixi.sh) for development, so the first step is to install it.
+If you are want to customize the template or make your own, we have attempted to make it as easy as possible. We use [pixi](https://pixi.sh) for development, so the first step is to install it.
 
 === "MacOS & Linux"
 
