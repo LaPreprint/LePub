@@ -1,6 +1,6 @@
 !!! failure
 
-    The template has not yet been added to the Typst Universe, so it is not yet easily accessible for use in Typst.
+    The template has not yet been added to the Typst Universe, so it is not easily accessible for use in Typst.
 
 To use the LePub template, simply `#import` it at the top of your Typst (`.typ`) document.
 
