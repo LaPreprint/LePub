@@ -5,7 +5,7 @@
 To use the LePub template, simply `#import` it at the top of your Typst (`.typ`) document.
 
 ```typst
-#import "@preview/lepub"
+#import "@preview/lepub:1.0.0": *
 ```
 
 ## Usage
@@ -13,7 +13,7 @@ To use the LePub template, simply `#import` it at the top of your Typst (`.typ`)
 To use the template, simply `#show` it:
 
 ``` typst
-#import "@preview/lepub" 
+#import "@preview/lepub:1.0.0": *
 #show: lepub.with(
   frontmatter: (), //(1)!
   options: ()
@@ -36,8 +36,8 @@ options: (
 If you have front matter available in YAML, you can use the [pubmatter](https://typst.app/universe/package/pubmatter/) package to read it - LePub will automatically know what to do with it:
 
 ```typst
-#import "@preview/lepub"
-#import "@preview/pubmatter"
+#import "@preview/lepub:1.0.0": *
+#import "@preview/pubmatter:0.2.0": *
 #let fm = pubmatter.load(yaml("frontmatter.yml"))
 #show: lepub.with(
   frontmatter: fm,
