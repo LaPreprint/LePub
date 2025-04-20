@@ -1,5 +1,11 @@
 # LePub with Quarto
-LePub can be installed as a Quarto extension.
+To begin a new project using LePub is incredibly simple.
+
+```sh
+quarto use template lapreprint/lepub/quarto
+```
+
+LePub can also be installed as a Quarto extension in an existing project.
 
 ```sh
 quarto add lapreprint/lepub/quarto
@@ -7,7 +13,7 @@ quarto add lapreprint/lepub/quarto
 
 ## Usage
 
-Then, to use the template, specify `lepub-typst` as a custom format:
+To use the template, specify `lepub-typst` as a custom format:
 ```yaml
 format:
     lepub-typst: default
