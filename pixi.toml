@@ -13,6 +13,7 @@ copy = { depends-on = ["copy-to-typst", "copy-to-quarto", "copy-to-myst"] }
 render-typst = { cmd = "typst compile typst/1.0.0/template/from-yaml.typ --root ..", depends-on = "copy" }
 render-quarto = { cmd = "quarto render quarto/example.qmd", depends-on = "copy" }
 render-myst = { cmd = "myst build myst/example.md", depends-on = "copy" }
+render-all = { depends-on = ["render-typst", "render-quarto", "render-myst"]}
 
 [tasks.rename]
 args = ["new-name"]
@@ -22,4 +23,5 @@ cmd = "find . -type f -name \"*.md\" -o -name \"*.qmd\" -o -name \"*.yaml\" -o -
 typst = ">=0.13.1,<0.14"
 mystmd = ">=1.3.25,<2"
 imagemagick = ">=7.1.1_47,<8"
+mkdocs-material = ">=9.6.12,<10"
 # quarto = ">=1.7.0,<2"

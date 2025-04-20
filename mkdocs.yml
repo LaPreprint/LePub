@@ -1,0 +1,57 @@
+site_name: LePub
+site_url: https://lapreprint.github.io/lepub
+repo_url: https://github.com/lapreprint/lepub
+repo_name: lapreprint/lepub
+nav:
+  - Home: index.md
+  - Usage:
+    - Settings: settings.md
+    - With Typst: typst.md
+    - With Quarto: quarto.md
+    - With MyST: myst.md
+  - Build Your Own:
+    - Overview: overview.md
+    - Theming: defaults.md
+    - Quarto & MyST: edit-quarto-myst.md
+theme:
+  name: material
+  palette:
+
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default 
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+  icon:
+    repo: fontawesome/brands/github
+  features:
+    - navigation.sections
+    - content.code.copy
+    - content.code.annotate
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - admonition
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
