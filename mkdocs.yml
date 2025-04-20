@@ -13,6 +13,8 @@ nav:
     - Overview: overview.md
     - Theming: defaults.md
     - Quarto & MyST: edit-quarto-myst.md
+    - Documentation: docs.md
+    - Share: share.md
 theme:
   name: material
   palette:
