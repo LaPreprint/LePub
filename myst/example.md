@@ -24,7 +24,7 @@ exports:
     line_spacing: 1em
     line_numbers: true
     theme_color: "#FF5733"
-    margin_side: "left"
+    margin_side: left
 ---
 
 ## Introduction
