@@ -20,6 +20,7 @@
       line-numbers: false,
       margin-side: "right",
       heading-numbering: "1.1.1",
+      // heading-
       logo: none,
       logo-position: top,
       paper-size: "us-letter",
@@ -173,7 +174,7 @@
       #show: block.with(above: 15pt, below: 13.75pt, sticky: true)
       #if it.numbering != none {
         numbering(options.heading-numbering, ..levels)
-        [.]
+        // [.]
         h(7pt, weak: true)
       }
       #it.body
@@ -183,7 +184,7 @@
       #set text(style: "italic")
       #if it.level == 3 and it.numbering != none {
         numbering(options.heading-numbering, ..levels)
-        [. ]
+        // [. ]
       }
       #it.body
     ]
@@ -344,6 +345,7 @@
   }
   show figure.caption: left-caption
   show figure.where(kind: "table"): set figure.caption(position: top)
+  show figure.where(kind: "table"): set block(breakable: true)
   set figure(placement: auto)
 
 

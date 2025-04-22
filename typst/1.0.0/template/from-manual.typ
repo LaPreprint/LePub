@@ -64,5 +64,31 @@ How is speech like birdsong? What do we mean when we say an animal learns their 
 == Smaller heading
 #lorem(100)
 
+#table(
+  columns: 7,
+  align: (auto,auto,auto,auto,auto,auto,auto,),
+  table.header(table.cell(rowspan: 2)[], table.cell(colspan: 2)[Kendall\'s W], table.cell(colspan: 2)[Gaussian model], table.cell(rowspan: 2)[N], table.cell(rowspan: 2)[n],
+    [W], [p], [ICC], [p],),
+  table.hline(),
+  table.cell(colspan: 7)[AP],
+  [DL + DD + LL], [0.48], [\< 0.001], [0.27 \[0.11, 0.43\]], [\< 0.001], [32], [172],
+  [DL + DD], [0.49], [0.005], [0.22 \[0.01, 0.43\]], [0.009], [27], [102],
+  [DL + LL], [0.63], [\< 0.001], [0.42 \[0.21, 0.60\]], [\< 0.001], [32], [119],
+  [DD + LL], [0.52], [0.001], [0.27 \[0.06, 0.46\]], [0.003], [27], [107],
+  table.cell(colspan: 7)[MP\[active\]],
+  [DL + DD + LL], [0.39], [\< 0.001], [0.23 \[0.08, 0.39\]], [\< 0.001], [32], [172],
+  [DL + DD], [0.48], [0.008], [0.28 \[0.05, 0.47\]], [0.002], [27], [102],
+  [DL + LL], [0.47], [0.006], [0.27 \[0.07, 0.46\]], [\< 0.001], [32], [119],
+  [DD + LL], [0.50], [0.002], [0.32 \[0.10, 0.52\]], [\< 0.001], [27], [107],
+  table.cell(colspan: 7)[MP\[passive\]],
+  [DL + DD + LL], [0.56], [\< 0.001], [0.42 \[0.24, 0.57\]], [\< 0.001], [32], [173],
+  [DL + DD], [0.57], [\< 0.001], [0.43 \[0.20, 0.61\]], [\< 0.001], [27], [103],
+  [DL + LL], [0.67], [\< 0.001], [0.49 \[0.28, 0.65\]], [\< 0.001], [32], [119],
+  [DD + LL], [0.62], [\< 0.001], [0.47 \[0.24, 0.64\]], [\< 0.001], [27], [108],
+)
+
 === Even smaller heading
+#lorem(100)
+
+=== Another even smaller heading
 #lorem(100)
