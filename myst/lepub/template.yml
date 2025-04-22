@@ -40,10 +40,23 @@ parts:
   - id: acknowledgements
   - id: declaration
   - id: data_availability
+  - id: funding
 options:
-  - type: boolean
-    id: line-numbers
-    description: Should the article show line numbers
   - type: string
     id: theme-color
     description: Color used for the theme
+  - id: font-body
+    type: string
+  - id: font-body-size
+    type: string
+  - id: line-spacing
+    type: string
+  - id: line-numbers
+    type: boolean
+    description: Should the article show line numbers
+  - id: margin-side
+    type: string
+  - id: logo
+    type: string
+  - id: logo-position
+    type: string

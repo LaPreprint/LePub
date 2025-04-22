@@ -5,3 +5,4 @@
 *.egg-info
 **/template-files
 _build
+quarto/**/example.typ

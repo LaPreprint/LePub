@@ -25,3 +25,11 @@ format:
     lepub-typst:
         line-numbers: true
 ```
+
+!!! info
+
+    Currently, there are two `options` whose names differ from the general options:
+    ```yaml
+    part-data-availability:
+    part-funding:
+    ```

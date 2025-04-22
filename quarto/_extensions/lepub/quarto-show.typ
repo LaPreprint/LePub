@@ -70,14 +70,38 @@
   $endif$
   ),
   options: (
+  $if(hi)$
+    hi: "$hi$",
+  $endif$
+  $if(theme-color)$
+    theme-color: "$theme-color$",
+  $endif$
   $if(font-body)$
     font-body: "$font-body$",
+  $endif$
+  $if(font-body-size)$
+    font-body-size: "$font-body-size$",
+  $endif$
+  $if(line-spacing)$
+    line-spacing: "$line-spacing$",
   $endif$
   $if(line-numbers)$
     line-numbers: $line-numbers$,
   $endif$
-  $if(theme-color)$
-    theme-color: "$theme-color$"
+  $if(margin-side)$
+    margin-side: "$margin-side$",
+  $endif$
+  $if(logo)$
+    logo: "$logo$",
+  $endif$
+  $if(logo-position)$
+    logo-position: "$logo-position$",
+  $endif$
+  $if(part-funding)$
+    funding: "$part-funding$",
+  $endif$
+  $if(part-data-availability)$
+    data-availability: "$part-data-availability$",
   $endif$
   )
 )

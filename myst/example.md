@@ -22,6 +22,7 @@ exports:
   - format: typst
     template: myst/lepub
     theme-color: "#FF5733"
+    margin-side: "left"
 ---
 
 ## Introduction

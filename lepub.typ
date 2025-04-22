@@ -5,7 +5,6 @@
   options: (),
   heading-numbering: "1.1.1",
   kind: none,
-  paper-size: "us-letter",
   // The path to a bibliography file if you want to cite some external works.
   page-start: none,
   max-page: none,
@@ -17,7 +16,15 @@
   let default-options = (
       theme-color: "#2453A1",
       font-body: "libertinus serif",
-      line-numbers: false
+      font-body-size: 9pt,
+      line-spacing: 0.65em,
+      line-numbers: false,
+      margin-side: right,
+      logo: none,
+      logo-position: top,
+      paper-size: "us-letter",
+      funding: none,
+      data-availability: none
     )
 
   if (type(options) == array) {
@@ -26,13 +33,52 @@
 
   let options = default-options + options
 
+  // Line spacing
+  if (type(options.line-spacing) == str) {
+    if (options.line-spacing == "single") {
+      options.line-spacing = 0.65em
+    } else if (options.line-spacing == "onehalf") {
+      options.line-spacing = 0.975em
+    } else if (options.line-spacing == "double") {
+      options.line-spacing = 1.3em
+    }
+  }
+
+  // Alignment
+  options.side-width = 27%
+  if (options.margin-side == left) {
+    options.margin-side = "left"
+    options.margin-side-align = left
+    options.margin-shift = -33%
+    options.margin-shift-logo = -33%
+    if (options.line-numbers == true) {
+      options.side-width = 24%
+      // options.number-clearance = 8pt
+    }
+  } else if (options.margin-side == right) {
+    options.margin-side = "right"
+    options.margin-side-align = right
+    options.margin-shift = 5.2%
+    options.margin-shift-logo = 32%
+  }
+
+  // Logo placement
+  if (options.logo-position == top) {
+    options.logo-v-adjustment = -10pt
+  } else if (options.logo-position == bottom) {
+    options.logo-v-adjustment = -70pt
+  }
+
   // Load frontmatter
   let fm = pubmatter.load(frontmatter)
 
   // Process dates
   let dates;
   if ("date" in fm and type(fm.date) == datetime) {
-    dates = ((title: "Published", date: fm.date),)
+    dates = (
+      (title: "Published", date: fm.date),
+      (title: "Submitted", date: fm.date)
+      )
   } else {
     dates = date
   }
@@ -45,16 +91,21 @@
   let theme = (color: theme-color, font: options.font-body)
   if (page-start != none) {counter(page).update(page-start)}
   state("THEME").update(theme)
+
   set page(
-    paper: paper-size,
-    margin: (left: 25%),
+    paper: options.paper-size,
+    margin: (options.margin-side: 25%),
     header: pubmatter.show-page-header(fm),
     footer: block(
       width: 100%,
       stroke: (top: 1pt + gray),
       inset: (top: 8pt, right: 2pt),
       context [
-        #set text(font: theme.font, size: 9pt, fill: gray.darken(50%))
+        #set text(
+          font: theme.font, 
+          size: 9pt, 
+          fill: gray.darken(50%)
+          )
         #pubmatter.show-spaced-content((
           if("venue" in fm) {emph(fm.venue)},
           if("date" in fm and fm.date != none) {fm.date.display("[month repr:long] [day], [year]")}
@@ -64,12 +115,6 @@
       ]
     ),
   )
-
-  // Figure out how to find it in YAML and otherwise return none
-  let logo = none
-  // let logo = [
-  //   #image("logo.jpg")
-  // ]
 
   show link: it => [#text(fill: theme.color)[#it]]
   show ref: it => {
@@ -85,16 +130,23 @@
   }
 
   // Set the body font.
-  set text(font: options.font-body, size: 9pt)
+  set text(
+    font: options.font-body, 
+    size: options.font-body-size
+  )
   // Configure equation numbering and spacing.
   set math.equation(numbering: "(1)")
   show math.equation: set block(spacing: 1em)
 
-  // Configure lists.
+  // =============================== //
+  // =========== Lists ============= //
+  // =============================== //
   set enum(indent: 10pt, body-indent: 9pt)
   set list(indent: 10pt, body-indent: 9pt)
 
-  // Configure headings.
+  // =============================== //
+  // ========== Headings =========== //
+  // =============================== //
   set heading(numbering: heading-numbering)
   show heading: it => context {
     let loc = here()
@@ -136,18 +188,22 @@
       _#(it.body)_
     ]
   }
-  if (logo != none) {
+
+  // =============================== //
+  // ======== Logo placement ======= //
+  // =============================== //
+  if options.at("logo", default: none) != none {
     place(
-      top,
-      dx: -33%,
+      options.logo-position + options.margin-side-align,
+      dx: options.margin-shift-logo,
       float: false,
       box(
         width: 27%,
         {
-          if (type(logo) == content) {
-            logo
+          if (type(options.logo) == content) {
+            options.logo
           } else {
-            image(logo, width: 100%)
+            image(options.logo, width: 100%)
           }
         },
       ),
@@ -166,12 +222,18 @@
     it.body
   }
 
-
-  // Title and subtitle
+  // =============================== //
+  // ====== Title and Subtitle ===== //
+  // =============================== //
   pubmatter.show-title-block(fm)
 
+  // =============================== //
+  // ======== Margin matter ======== //
+  // =============================== //
   let corresponding = fm.authors.filter((author) => "email" in author).at(0, default: none)
   let margin = (
+
+    // == Corresponding author == //
     if corresponding != none {
       (
         title: "Correspondence to",
@@ -189,64 +251,91 @@
         #pubmatter.show-copyright(fm)
       ]
     ),
-    if fm.at("github", default: none) != none {
+
+    // == Data Availability == //
+    if options.at("data-availability", default: none) != none {
       (
         title: "Data Availability",
         content: [
-          Source code available:\
-          #link(fm.github, fm.github)
+          #set par(justify: true)
+          #set text(size: 7pt)
+          #options.data-availability
         ],
       )
     },
+
+    // == Funding == //
+    if options.at("funding", default: none) != none {(
+      title: "Funding",
+      content: [
+        #set par(justify: true)
+        #set text(size: 7pt)
+        #options.funding
+      ]
+    )}
   ).filter((m) => m != none)
 
+  // Margin matter placement
   place(
-    left + bottom,
-    dx: -33%,
-    dy: -10pt,
-    box(width: 27%, {
-      set text(font: theme.font)
-      if (kind != none) {
-        show par: set par(spacing: 0em)
-        text(11pt, fill: theme.color, weight: "semibold", smallcaps(kind))
-        parbreak()
-      }
-      if (dates != none) {
-        let formatted-dates
+    options.margin-side-align + bottom,
+    dx: options.margin-shift,
+    dy: options.logo-v-adjustment,
+    place( // Nested `place` to ensure that text can be left-aligned when in right margin
+      left + bottom,
+      box(width: options.side-width, {
+        set text(font: theme.font)
+        if (kind != none) {
+          show par: set par(spacing: 0em)
+          text(11pt, fill: theme.color, weight: "semibold", smallcaps(kind))
+          parbreak()
+        }
+        if (dates != none) {
+          let formatted-dates
 
-        grid(columns: (40%, 60%), gutter: 7pt,
-          ..dates.zip(range(dates.len())).map((formatted-dates) => {
-            let d = formatted-dates.at(0);
-            let i = formatted-dates.at(1);
-            let weight = "light"
-            if (i == 0) {
-              weight = "bold"
+          grid(columns: (40%, 60%), gutter: 7pt,
+            ..dates.zip(range(dates.len())).map((formatted-dates) => {
+              let d = formatted-dates.at(0);
+              let i = formatted-dates.at(1);
+              let weight = "light"
+              if (i == 0) {
+                weight = "bold"
+              }
+              return (
+                text(size: 7pt, fill: theme.color, weight: weight, d.title),
+                text(size: 7pt, d.date.display("[month repr:short] [day], [year]"))
+              )
+            }).flatten()
+          )
+        }
+        v(2em)
+        grid(columns: 1, gutter: 2em, ..margin.map(side => {
+          text(size: 7pt, {
+            if ("title" in side) {
+              text(fill: theme.color, weight: "bold", side.title)
+              [\ ]
             }
-            return (
-              text(size: 7pt, fill: theme.color, weight: weight, d.title),
-              text(size: 7pt, d.date.display("[month repr:short] [day], [year]"))
-            )
-          }).flatten()
-        )
-      }
-      v(2em)
-      grid(columns: 1, gutter: 2em, ..margin.map(side => {
-        text(size: 7pt, {
-          if ("title" in side) {
-            text(fill: theme.color, weight: "bold", side.title)
-            [\ ]
-          }
-          set enum(indent: 0.1em, body-indent: 0.25em)
-          set list(indent: 0.1em, body-indent: 0.25em)
-          side.content
-        })
-      }))
-    }),
+            set enum(indent: 0.1em, body-indent: 0.25em)
+            set list(indent: 0.1em, body-indent: 0.25em)
+            side.content
+          })
+        }))
+      }),
+    )
   )
 
+  // =============================== //
+  // ========== Abstract =========== //
+  // =============================== //
   pubmatter.show-abstract-block(fm)
 
-  show par: set par(spacing: 1.4em, justify: true)
+  // =============================== //
+  // =========== Body  ============= //
+  // =============================== //
+  show par: set par(
+    leading: options.line-spacing,
+    spacing: 1.4em, 
+    justify: true
+    )
 
   show raw.where(block: true): (it) => {
       set text(size: 6pt)
@@ -257,6 +346,10 @@
   show figure.where(kind: "table"): set figure.caption(position: top)
   set figure(placement: auto)
 
+
+  // =============================== //
+  // ======== Bibliography ========= //
+  // =============================== //
   set bibliography(title: text(10pt, "References"), style: "ieee")
   show bibliography: (it) => {
     set text(7pt)
@@ -264,9 +357,16 @@
     it
   }
 
-  // Line numbering
-  set par.line(numbering: "1") if options.line-numbers == true
+  // =============================== //
+  // ======== Line numbering ======= //
+  // =============================== //
+  set par.line(
+    numbering: "1", 
+    // number-clearance: options.number-clearance
+    ) if options.line-numbers == true
 
-  // Display the paper's contents.
+  // =============================== //
+  // ======= Display content ======= //
+  // =============================== //
   body
 }

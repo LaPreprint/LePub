@@ -73,14 +73,29 @@
   [# endif #]
   ),
   options: (
+  [# if options.theme-color #]
+    theme-color: "[-options.theme-color-]"
+  [# endif #]
   [# if options.font-body #]
     font-body: "[-options.font-body-]",
+  [# endif #]
+  [# if options.font-body-size #]
+    font-body-size: "[-options.font-body-size-]",
+  [# endif #]
+  [# if options.line-spacing #]
+    line-spacing: [-options.line-spacing-],
   [# endif #]
   [# if options.line-numbers #]
     line-numbers: [-options.line-numbers-],
   [# endif #]
-  [# if options.theme-color #]
-    theme-color: "[-options.theme-color-]"
+  [# if options.margin-side #]
+    margin-side: [-options.margin-side-],
+  [# endif #]
+  [# if options.logo #]
+    logo: [-options.logo-],
+  [# endif #]
+  [# if options.logo-position #]
+    logo-position: [-options.logo-position-],
   [# endif #]
   )
 )

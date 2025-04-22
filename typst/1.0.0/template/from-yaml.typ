@@ -10,4 +10,7 @@
 )
 
 = Introduction
-Some text
+#lorem(300)
+
+= Methods
+#lorem(1000)

@@ -1,6 +1,9 @@
 # Front matter
 
-Used **front matter** fields.
+Used **front matter** fields. 
+
+<!-- MyST front matter fields: https://mystmd.org/guide/frontmatter#available-frontmatter-fields -->
+
 
 ```yaml
 title: str
@@ -34,8 +37,15 @@ bibliography:
 options:
     theme-color: red
     font-body: "libertinus serif"
-    line-spacing: 1.0
+    font-body-size: 9pt
+    line-spacing: 0.65em # or "single", "onehalf" or "double"
     line-numbers: true
+    margin-side: left
+    paper-size: "us-letter"
     section-numbering: true
+    logo: none
+    logo-position: bottom # top or bottom
+    funding: string
+    data-availability: string
     endfloat: false // Not implemented yet!
 ```
