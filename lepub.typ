@@ -19,7 +19,7 @@
       font-body-size: 9pt,
       line-spacing: 0.65em,
       line-numbers: false,
-      margin-side: right,
+      margin-side: "right",
       logo: none,
       logo-position: top,
       paper-size: "us-letter",
@@ -46,8 +46,8 @@
 
   // Alignment
   options.side-width = 27%
-  if (options.margin-side == left) {
-    options.margin-side = "left"
+  options.margin-side = str(options.margin-side)
+  if (options.margin-side == "left") {
     options.margin-side-align = left
     options.margin-shift = -33%
     options.margin-shift-logo = -33%
@@ -55,8 +55,7 @@
       options.side-width = 24%
       // options.number-clearance = 8pt
     }
-  } else if (options.margin-side == right) {
-    options.margin-side = "right"
+  } else if (options.margin-side == "right") {
     options.margin-side-align = right
     options.margin-shift = 5.2%
     options.margin-shift-logo = 32%

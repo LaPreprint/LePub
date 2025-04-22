@@ -89,13 +89,13 @@
     line-numbers: [-options.line_numbers-],
   [# endif #]
   [# if options.margin_side #]
-    margin-side: [-options.margin_side-],
+    margin-side: "[-options.margin_side-]",
   [# endif #]
   [# if options.logo #]
     logo: [-options.logo-],
   [# endif #]
   [# if options.logo_position #]
-    logo-position: [-options.logo_position-],
+    logo-position: "[-options.logo_position-]",
   [# endif #]
   )
 )

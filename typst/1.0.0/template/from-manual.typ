@@ -4,7 +4,7 @@
     font-body: "libertinus serif",
     line-numbers: false,
     theme-color: "#FF5733",
-    margin-side: right,
+    margin-side: "right",
     logo: "template/logo.jpg",
     github: "https://github.com/vocalpy/vak",
     parts: (
