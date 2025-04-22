@@ -21,8 +21,10 @@ license: CC-BY-4.0
 exports:
   - format: typst
     template: myst/lepub
-    theme-color: "#FF5733"
-    margin-side: "left"
+    line_spacing: 1em
+    line_numbers: true
+    theme_color: "#FF5733"
+    margin_side: left
 ---
 
 ## Introduction

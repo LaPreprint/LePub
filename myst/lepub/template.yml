@@ -43,20 +43,20 @@ parts:
   - id: funding
 options:
   - type: string
-    id: theme-color
+    id: theme_color
     description: Color used for the theme
-  - id: font-body
+  - id: font_body
     type: string
-  - id: font-body-size
+  - id: font_body_size
     type: string
-  - id: line-spacing
+  - id: line_spacing
     type: string
-  - id: line-numbers
+  - id: line_numbers
     type: boolean
     description: Should the article show line numbers
-  - id: margin-side
+  - id: margin_side
     type: string
   - id: logo
     type: string
-  - id: logo-position
+  - id: logo_position
     type: string

@@ -73,29 +73,29 @@
   [# endif #]
   ),
   options: (
-  [# if options.theme-color #]
-    theme-color: "[-options.theme-color-]"
+  [# if options.theme_color #]
+    theme-color: "[-options.theme_color-]",
   [# endif #]
-  [# if options.font-body #]
-    font-body: "[-options.font-body-]",
+  [# if options.font_body #]
+    font-body: "[-options.font_body-]",
   [# endif #]
-  [# if options.font-body-size #]
-    font-body-size: "[-options.font-body-size-]",
+  [# if options.font_body_size #]
+    font-body-size: "[-options.font_body_size-]",
   [# endif #]
-  [# if options.line-spacing #]
-    line-spacing: [-options.line-spacing-],
+  [# if options.line_spacing #]
+    line-spacing: [-options.line_spacing-],
   [# endif #]
-  [# if options.line-numbers #]
-    line-numbers: [-options.line-numbers-],
+  [# if options.line_numbers #]
+    line-numbers: [-options.line_numbers-],
   [# endif #]
-  [# if options.margin-side #]
-    margin-side: [-options.margin-side-],
+  [# if options.margin_side #]
+    margin-side: [-options.margin_side-],
   [# endif #]
   [# if options.logo #]
     logo: [-options.logo-],
   [# endif #]
-  [# if options.logo-position #]
-    logo-position: [-options.logo-position-],
+  [# if options.logo_position #]
+    logo-position: [-options.logo_position-],
   [# endif #]
   )
 )

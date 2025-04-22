@@ -24,5 +24,13 @@ You can then set [options](settings.md#options) under the format:
 exports:
   - format: typst
     template: typst-lepub
-    line-numbers: true
+    line_numbers: true
 ```
+
+!!! info
+
+    Note that all option names use underscore (`_`) instead of hyphen (`-`):
+    ```yaml
+    line_numbers: true # Correct
+    line-numbers: true # Wrong
+    ```
