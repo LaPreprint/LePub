@@ -29,7 +29,7 @@ exports:
 
 !!! info
 
-    Note that all option names use underscore (`_`) instead of hyphen (`-`):
+    Note that for MyST all option names use underscore (`_`) instead of hyphen (`-`):
     ```yaml
     line_numbers: true # Correct
     line-numbers: true # Wrong
