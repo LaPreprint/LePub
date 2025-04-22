@@ -3,7 +3,6 @@
 #let lepub(
   frontmatter: (),
   options: (),
-  heading-numbering: "1.1.1",
   kind: none,
   // The path to a bibliography file if you want to cite some external works.
   page-start: none,
@@ -20,6 +19,7 @@
       line-spacing: 0.65em,
       line-numbers: false,
       margin-side: "right",
+      heading-numbering: "1.1.1",
       logo: none,
       logo-position: top,
       paper-size: "us-letter",
@@ -146,7 +146,7 @@
   // =============================== //
   // ========== Headings =========== //
   // =============================== //
-  set heading(numbering: heading-numbering)
+  set heading(numbering: options.heading-numbering)
   show heading: it => context {
     let loc = here()
     // Find out the final number of the heading counter.
@@ -157,11 +157,11 @@
       // We don't want to number of the acknowledgment section.
       #let is-ack = it.body in ([Acknowledgements], [Declaration of Competing Interest])
       // #set align(center)
-      #set text(if is-ack { 10pt } else { 12pt })
-      #show: smallcaps
+      #set text(if is-ack { 10pt } else { 12pt }, weight: if is-ack { "regular" } else { "bold" })
+      // #show: smallcaps
       #show: block.with(above: 20pt, below: 13.75pt, sticky: true)
       #if it.numbering != none and not is-ack {
-        numbering(heading-numbering, ..levels)
+        numbering(options.heading-numbering, ..levels)
         [.]
         h(7pt, weak: true)
       }
@@ -169,10 +169,10 @@
     ] else if it.level == 2 [
       // Second-level headings are run-ins.
       #set par(first-line-indent: 0pt)
-      #set text(style: "italic")
+      #set text(weight: "semibold")
       #show: block.with(above: 15pt, below: 13.75pt, sticky: true)
       #if it.numbering != none {
-        numbering(heading-numbering, ..levels)
+        numbering(options.heading-numbering, ..levels)
         [.]
         h(7pt, weak: true)
       }
@@ -180,11 +180,12 @@
     ] else [
       // Third level headings are run-ins too, but different.
       #show: block.with(above: 15pt, below: 13.75pt, sticky: true)
-      #if it.level == 3 {
-        numbering(heading-numbering, ..levels)
+      #set text(style: "italic")
+      #if it.level == 3 and it.numbering != none {
+        numbering(options.heading-numbering, ..levels)
         [. ]
       }
-      _#(it.body)_
+      #it.body
     ]
   }
 

@@ -42,7 +42,7 @@ options:
     line-numbers: true
     margin-side: left
     paper-size: "us-letter"
-    section-numbering: true
+    heading-numbering: "1.1.1" # or another valid pattern, e.g. "1.a.i" or "none"
     logo: none
     logo-position: bottom # top or bottom
     funding: string

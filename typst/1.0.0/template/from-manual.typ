@@ -60,3 +60,9 @@ How is speech like birdsong? What do we mean when we say an animal learns their 
 
 = Introduction
 #lorem(1000)
+
+== Smaller heading
+#lorem(100)
+
+=== Even smaller heading
+#lorem(100)
