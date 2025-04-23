@@ -19,8 +19,8 @@
       line-spacing: 0.65em,
       line-numbers: false,
       margin-side: "right",
-      heading-numbering: "1.1.1",
-      // heading-
+      section-numbering: "1.1.1",
+      section-numbering-last: false,
       logo: none,
       logo-position: top,
       bibliography: none,
@@ -152,11 +152,13 @@
   // =============================== //
   // ========== Headings =========== //
   // =============================== //
-  set heading(numbering: options.heading-numbering)
+
+  set heading(numbering: options.section-numbering)
   show heading: it => context {
     let loc = here()
     // Find out the final number of the heading counter.
     let levels = counter(heading).at(loc)
+    let level-patterns = options.section-numbering.split(".")
     set text(10pt, weight: 400)
     if it.level == 1 [
       // First-level headings are centered smallcaps.
@@ -167,7 +169,7 @@
       // #show: smallcaps
       #show: block.with(above: 20pt, below: 13.75pt, sticky: true)
       #if it.numbering != none and not is-ack {
-        numbering(options.heading-numbering, ..levels)
+        numbering(level-patterns.at(0), levels.at(0))
         [.]
         h(7pt, weak: true)
       }
@@ -178,7 +180,11 @@
       #set text(weight: "semibold")
       #show: block.with(above: 15pt, below: 13.75pt, sticky: true)
       #if it.numbering != none {
-        numbering(options.heading-numbering, ..levels)
+        if options.section-numbering-last == false {
+          numbering(options.section-numbering, ..levels) 
+          } else { 
+          numbering(level-patterns.at(1), levels.at(1))
+        } 
         // [.]
         h(7pt, weak: true)
       }
@@ -188,7 +194,11 @@
       #show: block.with(above: 15pt, below: 13.75pt, sticky: true)
       #set text(style: "italic")
       #if it.level == 3 and it.numbering != none {
-        numbering(options.heading-numbering, ..levels)
+        if options.section-numbering-last == false {
+          numbering(options.section-numbering, ..levels) 
+          } else { 
+          numbering(level-patterns.at(2), levels.at(2))
+        } 
         // [. ]
       }
       #it.body
