@@ -1,7 +1,9 @@
 site_name: LePub
+site_author: Mikkel Roald-Arbøl
 site_url: https://lapreprint.github.io/lepub
 repo_url: https://github.com/lapreprint/lepub
 repo_name: lapreprint/lepub
+copyright: Copyright &copy; 2025 Maintained by <a href="https://github.com/roaldarbol">Mikkel Roald-Arbøl</a>.
 nav:
   - Home: index.md
   - Usage:
