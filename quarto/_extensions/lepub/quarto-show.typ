@@ -97,8 +97,11 @@
   $if(logo-position)$
     logo-position: "$logo-position$",
   $endif$
-  $if(heading-numbering)$
-    heading-numbering: "$heading-numbering$",
+  $if(section-numbering)$
+    section-numbering: "$section-numbering$",
+  $endif$
+  $if(section-numbering-last)$
+    section-numbering-last: $section-numbering-last$,
   $endif$
   $if(bibliography)$
     bibliography: (

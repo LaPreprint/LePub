@@ -97,14 +97,17 @@
   [# if options.logo_position #]
     logo-position: "[-options.logo_position-]",
   [# endif #]
-  [# if options.heading-numbering #]
-    heading-numbering: "[-options.heading-numbering-]",
+  [# if options.section_numbering #]
+    section-numbering: "[-options.section_numbering-]",
+  [# endif #]
+  [# if options.section-numbering-last #]
+    section-numbering-last: "[-options.section_numbering_last-]",
   [# endif #]
   [# if doc.bibliography #]
     bibliography: "[-doc.bibliography-]",
   [# endif #]
   [# if options.bibliographystyle #]
-    bibliography-style: "[-options.bibliography-style-]"
+    bibliography-style: "[-options.bibliographystyle-]"
   [# endif #]
   )
 )
