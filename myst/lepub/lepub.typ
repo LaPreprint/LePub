@@ -25,6 +25,10 @@
       logo-position: top,
       bibliography: none,
       bibliography-style: "ieee",
+      date-submitted: none,
+      date-received: none,
+      date-accepted: none,
+      date-published: none,
       paper-size: "us-letter",
       funding: none,
       data-availability: none
@@ -78,8 +82,7 @@
   let dates;
   if ("date" in fm and type(fm.date) == datetime) {
     dates = (
-      (title: "Published", date: fm.date),
-      (title: "Submitted", date: fm.date)
+      (title: "Submitted", date: fm.date),
       )
   } else {
     dates = date
