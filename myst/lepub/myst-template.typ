@@ -97,6 +97,9 @@
   [# if options.logo_position #]
     logo-position: "[-options.logo_position-]",
   [# endif #]
+  [# if options.heading-numbering #]
+    heading-numbering: "[-options.heading-numbering-]",
+  [# endif #]
   [# if doc.bibliography #]
     bibliography: "[-doc.bibliography-]",
   [# endif #]

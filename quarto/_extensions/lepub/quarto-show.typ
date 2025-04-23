@@ -97,6 +97,9 @@
   $if(logo-position)$
     logo-position: "$logo-position$",
   $endif$
+  $if(heading-numbering)$
+    heading-numbering: "$heading-numbering$",
+  $endif$
   $if(bibliography)$
     bibliography: (
       $for(bibliography)$
