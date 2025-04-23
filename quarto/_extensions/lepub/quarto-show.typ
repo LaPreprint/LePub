@@ -7,8 +7,8 @@
   $if(subtitle)$
     subtitle: "$subtitle$",
   $endif$
-  $if(short_title)$
-    short-title: "$short_title$",
+  $if(abstract-title)$
+    short-title: "$abstract-title$",
   $endif$
   $if(open_access)$
     open-access: $open_access$,

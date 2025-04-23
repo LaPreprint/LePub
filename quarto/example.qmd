@@ -1,5 +1,6 @@
 ---
 title: "Mathematical Theorems"
+abstract-title: Theorems
 authors: 
   - name: Ralph Howard
     orcid: 0000-0003-2550-0012
