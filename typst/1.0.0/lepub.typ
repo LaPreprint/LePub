@@ -23,6 +23,8 @@
       // heading-
       logo: none,
       logo-position: top,
+      bibliography: none,
+      bibliography-style: "ieee",
       paper-size: "us-letter",
       funding: none,
       data-availability: none
@@ -352,11 +354,16 @@
   // =============================== //
   // ======== Bibliography ========= //
   // =============================== //
-  set bibliography(title: text(10pt, "References"), style: "ieee")
-  show bibliography: (it) => {
-    set text(7pt)
-    set block(spacing: 0.9em)
-    it
+  if bibliography != none {
+    set bibliography(
+      title: text(10pt, "References"), 
+      style: options.bibliography-style
+    )
+    show bibliography: (it) => {
+      set text(7pt)
+      set block(spacing: 0.9em)
+      it
+    }
   }
 
   // =============================== //
@@ -371,4 +378,20 @@
   // ======= Display content ======= //
   // =============================== //
   body
+
+  // =============================== //
+  // ==== Display bibliography ===== //
+  // =============================== //
+  if options.bibliography != none {
+    set bibliography(
+      title: text(10pt, "References"), 
+      style: options.bibliography-style
+    )
+    show bibliography: (it) => {
+      set text(7pt)
+      set block(spacing: 0.9em)
+      it
+    }
+    bibliography(options.bibliography)
+  }
 }

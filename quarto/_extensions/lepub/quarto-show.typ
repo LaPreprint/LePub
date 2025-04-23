@@ -97,6 +97,16 @@
   $if(logo-position)$
     logo-position: "$logo-position$",
   $endif$
+  $if(bibliography)$
+    bibliography: (
+      $for(bibliography)$
+        ("$it$"),
+      $endfor$
+    ),
+  $endif$
+  $if(bibliographystyle)$
+    bibliography-style: "$bibliographystyle$",
+  $endif$
   $if(part-funding)$
     funding: "$part-funding$",
   $endif$

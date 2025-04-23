@@ -45,7 +45,10 @@ options:
     heading-numbering: "1.1.1" # or another valid pattern, e.g. "1.a.i" or "none"
     logo: none
     logo-position: bottom # top or bottom
+    bibliography-style: string # (1)!
     funding: string
     data-availability: string
     endfloat: false // Not implemented yet!
 ```
+
+1. Should be one of the [supported Typst styles](https://typst.app/docs/reference/model/bibliography/#styles).

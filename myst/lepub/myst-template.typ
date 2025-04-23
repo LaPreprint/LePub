@@ -97,6 +97,12 @@
   [# if options.logo_position #]
     logo-position: "[-options.logo_position-]",
   [# endif #]
+  [# if doc.bibliography #]
+    bibliography: "[-doc.bibliography-]",
+  [# endif #]
+  [# if options.bibliographystyle #]
+    bibliography-style: "[-options.bibliography-style-]"
+  [# endif #]
   )
 )
 

@@ -57,9 +57,7 @@ bibliography: refs.bib
 
 ## Introduction
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et ornare urna, ornare malesuada ante. Aenean fringilla fermentum pulvinar. Integer maximus mauris id gravida eleifend. Donec et facilisis neque. 
-
-<!-- @netwok2020 -->
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et ornare urna, ornare malesuada ante. Aenean fringilla fermentum pulvinar. Integer maximus mauris id gravida eleifend. Donec et facilisis neque [@netwok2020].
 
 Vestibulum massa nunc, pellentesque vitae velit vitae, porttitor efficitur nisl. Integer massa lacus, tristique a laoreet vitae, commodo sed odio. Phasellus eget metus tempus sem molestie iaculis. 
 

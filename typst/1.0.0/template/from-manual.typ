@@ -7,6 +7,8 @@
     margin-side: "right",
     logo: "template/logo.jpg",
     github: "https://github.com/vocalpy/vak",
+    bibliography: ("template/refs.bib", "template/refs-2.bib"),
+    bibliography-style: "apa",
     parts: (
       funding: [
         This work was supported by the Swiss National Science Foundation (SNSF; #link("https://www.snf.ch/en")) Ambizione Fellowship PZ00P3_180085 (to AH), SNSF Starting Grant TMSGI3_211369 (to AH), and SNSF National Centre of Competence in Research (NCCR) AntiResist (to AH; grant number 180541). The funder played no role in the study design, data collection and analysis, decision to publish, or preparation of the manuscript. 
@@ -88,7 +90,7 @@ How is speech like birdsong? What do we mean when we say an animal learns their 
 )
 
 === Even smaller heading
-#lorem(100)
+#lorem(100) @netwok2020 @netwok2021
 
 === Another even smaller heading
 #lorem(100)

@@ -18,20 +18,19 @@ data_availability: The data is available of course.
 acknowledgments: |
   I would like to thank a lot of people.
 license: CC-BY-4.0
+bibliography: refs.bib
 exports:
   - format: typst
     template: myst/lepub
     line_spacing: 1em
     line_numbers: true
     theme_color: "#FF5733"
-    margin_side: left
+    margin_side: right
 ---
 
 ## Introduction
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et ornare urna, ornare malesuada ante. Aenean fringilla fermentum pulvinar. Integer maximus mauris id gravida eleifend. Donec et facilisis neque. 
-
-<!-- @netwok2020 -->
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et ornare urna, ornare malesuada ante. Aenean fringilla fermentum pulvinar. Integer maximus mauris id gravida eleifend. Donec et facilisis neque [@netwok2020].
 
 Vestibulum massa nunc, pellentesque vitae velit vitae, porttitor efficitur nisl. Integer massa lacus, tristique a laoreet vitae, commodo sed odio. Phasellus eget metus tempus sem molestie iaculis. 
 
