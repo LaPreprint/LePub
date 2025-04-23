@@ -53,6 +53,7 @@ format:
     part-data-availability: |
       Data is available a cool place.
 bibliography: refs.bib
+bibliographystyle: vancouver-brackets.csl
 ---
 
 ## Introduction

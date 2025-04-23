@@ -51,4 +51,4 @@ options:
     endfloat: false // Not implemented yet!
 ```
 
-1. Should be one of the [supported Typst styles](https://typst.app/docs/reference/model/bibliography/#styles).
+1. Should be one of the [supported Typst styles](https://typst.app/docs/reference/model/bibliography/#styles) or the path to a CSL file.
