@@ -100,7 +100,7 @@
   [# if options.section_numbering #]
     section-numbering: "[-options.section_numbering-]",
   [# endif #]
-  [# if options.section-numbering-last #]
+  [# if options.section_numbering_last #]
     section-numbering-last: "[-options.section_numbering_last-]",
   [# endif #]
   [# if doc.bibliography #]
