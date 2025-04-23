@@ -200,6 +200,7 @@
           numbering(level-patterns.at(2), levels.at(2))
         } 
         // [. ]
+        h(5pt, weak: true)
       }
       #it.body
     ]
