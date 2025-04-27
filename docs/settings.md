@@ -1,3 +1,7 @@
+# General
+
+We use a specific set of front matter and options across all formats. However, there may be slight differences in the naming, so be sure to check the reference for the format you use.
+
 # Front matter
 
 Used **front matter** fields. 

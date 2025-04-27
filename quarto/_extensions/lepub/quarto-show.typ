@@ -70,9 +70,6 @@
   $endif$
   ),
   options: (
-  $if(hi)$
-    hi: "$hi$",
-  $endif$
   $if(theme-color)$
     theme-color: "$theme-color$",
   $endif$
@@ -118,6 +115,9 @@
   $endif$
   $if(part-data-availability)$
     data-availability: "$part-data-availability$",
+  $endif$
+  $if(paper-size)$
+    paper-size: "$paper-size$",
   $endif$
   )
 )

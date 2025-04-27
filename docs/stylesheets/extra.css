@@ -1,0 +1,77 @@
+/* Save this as docs/stylesheets/extra.css or add to your existing CSS file */
+
+/* Base styling for all type elements */
+.type {
+    padding: 0px 6px;
+    border-radius: 10px;
+    font-family: var(--md-code-font-family);
+    font-size: 0.85em;
+    display: inline-block;
+    border-width: 1px;
+    border-style: solid;
+}
+
+/* Type-specific colors */
+.type-string {
+    background-color: #E8F5E9;
+    color: #2E7D32;
+    border-color: #4CAF50;
+}
+
+.type-boolean {
+    background-color: #E3F2FD;
+    color: #1565C0;
+    border-color: #2196F3;
+}
+
+.type-number {
+    background-color: #FFF3E0;
+    color: #E65100;
+    border-color: #FF9800;
+}
+
+.type-variant {
+    background-color: #F3E5F5;
+    color: #6A1B9A;
+    border-color: #9C27B0;
+}
+
+/* Or separator styling */
+.type-or {
+    color: #666;
+    font-style: italic;
+    font-weight: normal;
+    margin: 0 0.25em;
+    font-size: 0.9em;
+}
+
+/* Dark mode support */
+[data-md-color-scheme="slate"] .type-string {
+    background-color: #1B5E20;
+    color: #C8E6C9;
+    border-color: #4CAF50;
+}
+
+[data-md-color-scheme="slate"] .type-boolean {
+    background-color: #0D47A1;
+    color: #BBDEFB;
+    border-color: #2196F3;
+}
+
+[data-md-color-scheme="slate"] .type-number {
+    background-color: #E65100;
+    color: #FFE0B2;
+    border-color: #FF9800;
+}
+
+[data-md-color-scheme="slate"] .type-variant {
+    background-color: #4A148C;
+    color: #E1BEE7;
+    border-color: #9C27B0;
+}
+
+/* Optional: Style for parameter names if you want them consistent */
+.parameter-name code {
+    font-weight: 700;
+    font-size: 1.1em;
+}

@@ -7,10 +7,17 @@ copyright: Copyright &copy; 2025 Maintained by <a href="https://github.com/roald
 nav:
   - Home: index.md
   - Usage:
-    - Settings: settings.md
     - With Typst: typst.md
     - With Quarto: quarto.md
     - With MyST: myst.md
+  - Settings:
+    - General: settings.md
+    - Reference: 
+      # - Front matter: 
+      - Options:
+        - Typst: options-typst.md
+        - Quarto: options-quarto.md
+        - MyST: options-myst.md
   - Build Your Own:
     - Overview: overview.md
     - Theming: defaults.md
@@ -59,7 +66,11 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
+  - def_list
 
 plugins:
   - search
   - git-revision-date-localized
+
+extra_css:
+  - stylesheets/extra.css
