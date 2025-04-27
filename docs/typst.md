@@ -31,8 +31,6 @@ options: (
 )
 ```
 
-### YAML front matter
-
 If you have front matter available in YAML, you can use the [pubmatter](https://typst.app/universe/package/pubmatter/) package to read it - LePub will automatically know what to do with it:
 
 ```typst

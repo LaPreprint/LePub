@@ -19,7 +19,7 @@ format:
     lepub-typst: default
 ```
 
-You can then set [options](settings.md#options) under the format:
+You can then set [options](options-quarto.md) under the format:
 ```yaml
 format:
     lepub-typst:

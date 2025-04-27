@@ -6,18 +6,35 @@ repo_name: lapreprint/lepub
 copyright: Copyright &copy; 2025 Maintained by <a href="https://github.com/roaldarbol">Mikkel Roald-Arbøl</a>.
 nav:
   - Home: index.md
-  - Usage:
+  # - Typst:
+  #   - Quick start: typst.md
+  #   - Settings:
+  #     - Front matter: frontmatter-typst.md
+  #     - Options: options-typst.md
+  # - Quarto:
+  #   - Quick start: quarto.md
+  #   - Settings:
+  #     - Front matter: frontmatter-quarto.md
+  #     - Options: options-quarto.md
+  # - MyST:
+  #   - Quick start: myst.md
+  #   - Settings:
+  #     - Front matter: frontmatter-myst.md
+  #     - Options: options-myst.md
+  - Quick start:
     - With Typst: typst.md
     - With Quarto: quarto.md
     - With MyST: myst.md
   - Settings:
-    - General: settings.md
-    - Reference: 
-      # - Front matter: 
-      - Options:
-        - Typst: options-typst.md
-        - Quarto: options-quarto.md
-        - MyST: options-myst.md
+    - Typst:
+      - "Typst: Front matter": frontmatter-typst.md
+      - "Typst: Options": options-typst.md
+    - Quarto:
+      - "Quarto: Front matter": frontmatter-quarto.md
+      - "Quarto: Options": options-quarto.md
+    - MyST: 
+      - "MyST: Front matter": frontmatter-myst.md
+      - "MyST: Options": options-myst.md
   - Build Your Own:
     - Overview: overview.md
     - Theming: defaults.md
@@ -50,7 +67,10 @@ theme:
   icon:
     repo: fontawesome/brands/github
   features:
+    # - navigation.tabs
     - navigation.sections
+    - navigation.footer
+    - toc.integrate
     - content.code.copy
     - content.code.annotate
 

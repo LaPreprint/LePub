@@ -3,7 +3,7 @@
 ### `bibliography`
 
 :   **Type**: <span class="type type-array">array</span><span class="type-or">&lt;</span><span class="type type-string">string</span><span class="type-or">&gt;</span>  
-    **Description**: Path (or list of paths) of bibliography files to use.
+    **Description**: Path (or array of paths) of bibliography files to use.
 
 ### `bibliographystyle`
 

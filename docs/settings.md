@@ -10,29 +10,46 @@ Used **front matter** fields.
 
 
 ```yaml
-title: str
-subtitle: str
-short_title: str
-keywords: []
-abstract: str
+---
+title: 
+subtitle: 
+short-title: 
+keywords: 
+abstract:
+  - title:
+    content:
 authors:
-  - name: Mikkel Roald-Arbøl
-    orcid: 0000-0002-7859-8394
-    email: some@email.com
-    url: https://roald-arboel.com
-    roles: []
-    degrees: []
+  - name: 
+    orcid: 
+    email: 
+    url: 
+    roles: 
+    degrees: 
     affiliations:
-      - University of Sussex
-open_access: boolean
-license: []
-doi: str
+      - id:
+        index:
+affiliations:
+  - id:
+    index:
+    name:
+    institution:
+open-access: 
+license:
+  - id:
+    url:
+    name:
+doi: 
 funding:
-  - source: "NIH (Grant #: 1-R01-MH99999-01A1)"
+  - source: 
     investigator: 
-      - ref: nj
+      - ref: 
 acknowledgments: 
 bibliography: 
+---
+
+# Introduction
+
+Your paper starts here.
 ```
 
 # Options
