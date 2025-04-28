@@ -1,7 +1,7 @@
 # pandoc-defaults.yaml
 from: docx
 to: typst
-template: https://github.com/LaPreprint/LePub/blob/c68df1a1f7df3b2de402fd819c8ced69838e9a9b/docx/docx-show.typ
+template: https://raw.githubusercontent.com/LaPreprint/LePub/main/docx/docx-show.typ
 filters:
-  - https://github.com/LaPreprint/LePub/blob/c68df1a1f7df3b2de402fd819c8ced69838e9a9b/docx/filters/docx-custom-properties.lua
-  - https://github.com/LaPreprint/LePub/blob/c68df1a1f7df3b2de402fd819c8ced69838e9a9b/docx/filters/docx-keywords.lua
+  - https://raw.githubusercontent.com/LaPreprint/LePub/main/docx/filters/docx-custom-properties.lua
+  - https://raw.githubusercontent.com/LaPreprint/LePub/main/docx/filters/docx-keywords.lua
