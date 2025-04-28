@@ -350,8 +350,9 @@
   // =============================== //
   show par: set par(
     leading: options.line-spacing,
-    spacing: 1.4em, 
-    justify: true
+    spacing: 1.7em, 
+    justify: true,
+    first-line-indent: 1em
     )
 
   show raw.where(block: true): (it) => {

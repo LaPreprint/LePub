@@ -10,7 +10,7 @@ copy-to-typst = "cp lepub.typ typst/1.0.0"
 copy-to-quarto = "cp lepub.typ quarto/_extensions/lepub"
 copy-to-myst = "cp lepub.typ myst/lepub"
 copy-to-docx = "cp lepub.typ docx"
-copy = { depends-on = ["copy-to-typst", "copy-to-quarto", "copy-to-myst"] }
+copy = { depends-on = ["copy-to-typst", "copy-to-quarto", "copy-to-myst", "copy-to-docx"] }
 render-typst = { cmd = "typst compile typst/1.0.0/template/from-manual.typ --root ..", depends-on = "copy" }
 render-quarto = { cmd = "quarto render quarto/example.qmd", depends-on = "copy" }
 render-myst = { cmd = "myst build myst/example.md", depends-on = "copy" }
