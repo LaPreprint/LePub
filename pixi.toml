@@ -9,11 +9,14 @@ version = "0.1.0"
 copy-to-typst = "cp lepub.typ typst/1.0.0"
 copy-to-quarto = "cp lepub.typ quarto/_extensions/lepub"
 copy-to-myst = "cp lepub.typ myst/lepub"
+copy-to-docx = "cp lepub.typ docx"
 copy = { depends-on = ["copy-to-typst", "copy-to-quarto", "copy-to-myst"] }
 render-typst = { cmd = "typst compile typst/1.0.0/template/from-manual.typ --root ..", depends-on = "copy" }
 render-quarto = { cmd = "quarto render quarto/example.qmd", depends-on = "copy" }
 render-myst = { cmd = "myst build myst/example.md", depends-on = "copy" }
-render-all = { depends-on = ["render-typst", "render-quarto", "render-myst"]}
+render-docx-pre = { cmd = "pandoc -f docx -t typst docx/test.docx --template=docx/docx-show.typ --lua-filter=docx/docx-custom-properties.lua --lua-filter=docx/docx-keywords.lua -o docx/test.typ", depends-on = "copy-to-docx"}
+render-docx = { cmd = "typst compile docx/test.typ", depends-on = "render-docx-pre" }
+render-all = { depends-on = ["render-typst", "render-quarto", "render-myst", "render-docx"]}
 
 [tasks.rename]
 args = ["new-name"]
@@ -25,4 +28,5 @@ imagemagick = ">=7.1.1_47,<8"
 mkdocs-material = ">=9.6.12,<10"
 mystmd = ">=1.3.25,<2"
 mkdocs-git-revision-date-localized-plugin = ">=1.2.9,<2"
+pandoc = ">=3.6.4,<4"
 # quarto = ">=1.7.0,<2"
