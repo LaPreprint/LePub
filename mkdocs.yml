@@ -25,6 +25,7 @@ nav:
     - With Typst: typst.md
     - With Quarto: quarto.md
     - With MyST: myst.md
+    - With Word: docx.md
   - Settings:
     - Typst:
       - "Typst: Front matter": frontmatter-typst.md
@@ -35,6 +36,9 @@ nav:
     - MyST: 
       - "MyST: Front matter": frontmatter-myst.md
       - "MyST: Options": options-myst.md
+    - Word:
+      - "Word: Front matter": frontmatter-docx.md
+      - "Word: Options": options-docx.md
   - Build Your Own:
     - Overview: overview.md
     - Theming: defaults.md

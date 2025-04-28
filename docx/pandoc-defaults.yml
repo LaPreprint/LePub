@@ -1,0 +1,7 @@
+# pandoc-defaults.yaml
+from: docx
+to: typst
+template: https://raw.githubusercontent.com/username/repo/main/templates/docx-show.typ
+filters:
+  - https://raw.githubusercontent.com/username/repo/main/filters/docx-custom-properties.lua
+  - https://raw.githubusercontent.com/username/repo/main/filters/keywords-filter-complete.lua
