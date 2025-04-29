@@ -368,7 +368,7 @@
   // =============================== //
   show par: set par(
     leading: options.line-spacing,
-    spacing: 1.7em, 
+    spacing: 1.5 * options.line-spacing, 
     justify: true,
     first-line-indent: 1em
     )

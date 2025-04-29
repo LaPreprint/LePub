@@ -2,6 +2,7 @@
 #show: lepub.with(
   options: (
     word-count: true,
+    line-spacing: "double",
     font-body: "libertinus serif",
     line-numbers: false,
     theme-color: "#FF5733",
@@ -61,11 +62,13 @@ How is speech like birdsong? What do we mean when we say an animal learns their 
   )
 )
 
-// = Introduction
-// #lorem(1000)
+= Introduction
+#lorem(100)
 
-// == Smaller heading
-// #lorem(100)
+#lorem(100)
+
+== Smaller heading
+#lorem(100)
 
 // #table(
 //   columns: 7,
