@@ -69,3 +69,5 @@ options:
     type: string
   - id: parts_data_availability
     type: string
+  - id: word_count
+    type: boolean

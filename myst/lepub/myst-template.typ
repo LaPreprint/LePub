@@ -109,6 +109,9 @@
   [# if options.bibliographystyle #]
     bibliography-style: "[-options.bibliographystyle-]",
   [# endif #]
+  [# if options.word_count #]
+    word-count: "[-options.word_count-]",
+  [# endif #]
   parts: (
     [# if options.parts_funding #]
       funding: "[-options.parts_funding-]",
