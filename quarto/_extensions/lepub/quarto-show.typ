@@ -110,12 +110,14 @@
   $if(bibliographystyle)$
     bibliography-style: "$bibliographystyle$",
   $endif$
-  $if(part-funding)$
-    funding: "$part-funding$",
-  $endif$
-  $if(part-data-availability)$
-    data-availability: "$part-data-availability$",
-  $endif$
+  parts: (
+    $if(parts.funding)$
+      funding: "$parts.funding$",
+    $endif$
+    $if(parts.data-availability)$
+      data-availability: "$parts.data-availability$",
+    $endif$
+  ),
   $if(paper-size)$
     paper-size: "$paper-size$",
   $endif$

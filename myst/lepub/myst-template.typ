@@ -107,8 +107,16 @@
     bibliography: "[-doc.bibliography-]",
   [# endif #]
   [# if options.bibliographystyle #]
-    bibliography-style: "[-options.bibliographystyle-]"
+    bibliography-style: "[-options.bibliographystyle-]",
   [# endif #]
+  parts: (
+    [# if options.parts_funding #]
+      funding: "[-options.parts_funding-]",
+    [# endif #]
+    [# if options.parts_data_availability #]
+      data-availability: "[-options.parts_data_availability-]"
+    [# endif #]
+    )
   )
 )
 

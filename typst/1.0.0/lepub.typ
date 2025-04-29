@@ -1,5 +1,5 @@
-#import "@preview/pubmatter:0.2.0"
-#import "@preview/wordometer:0.1.4": word-count, total-words
+#import "@preview/pubmatter:0.2.1"
+#import "@preview/wordometer:0.1.4": word-count, total-words, total-characters
 
 #let lepub(
   frontmatter: (),
@@ -31,8 +31,7 @@
       date-accepted: none,
       date-published: none,
       paper-size: "us-letter",
-      funding: none,
-      data-availability: none,
+      parts: none,
       word-count: false
     )
 
@@ -99,9 +98,9 @@
   if (page-start != none) {counter(page).update(page-start)}
   state("THEME").update(theme)
 
-  if (options.word-count == true) {
-    show: word-count
-  }
+  show: word-count
+  let n-words = total-words
+  let n-characters = total-characters
 
   set page(
     paper: options.paper-size,
@@ -276,25 +275,27 @@
     ),
 
     // == Data Availability == //
-    if options.at("data-availability", default: none) != none {
-      (
+    if options.at("parts", default: none) != none {(
+      if options.parts.at("data-availability", default: none) != none {(
         title: "Data Availability",
         content: [
           #set par(justify: true)
           #set text(size: 7pt)
-          #options.data-availability
+          #options.parts.data-availability
         ],
-      )
-    },
+      )}
+    )},
 
     // == Funding == //
-    if options.at("funding", default: none) != none {(
-      title: "Funding",
-      content: [
-        #set par(justify: true)
-        #set text(size: 7pt)
-        #options.funding
-      ]
+    if options.at("parts", default: none) != none {(
+      if options.parts.at("funding", default: none) != none {(
+        title: "Funding",
+        content: [
+          #set par(justify: true)
+          #set text(size: 7pt)
+          #options.parts.funding
+        ]
+      )}
     )},
 
     // Word count
@@ -303,10 +304,8 @@
       content: [
         #set par(justify: true)
         #set text(size: 7pt)
-        #word-count(total => [
-          Words: #total.words \
-          Characters: #total.characters
-        ])
+        Words: #n-words \
+        Characters: #n-characters
       ]
     )}
   ).filter((m) => m != none)

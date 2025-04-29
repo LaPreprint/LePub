@@ -14,7 +14,7 @@ copy = { depends-on = ["copy-to-typst", "copy-to-quarto", "copy-to-myst", "copy-
 render-typst = { cmd = "typst compile typst/1.0.0/template/from-manual.typ --root ..", depends-on = "copy" }
 render-quarto = { cmd = "quarto render quarto/example.qmd", depends-on = "copy" }
 render-myst = { cmd = "myst build myst/example.md", depends-on = "copy" }
-render-docx-pre = { cmd = "pandoc -f docx -t typst docx/test.docx --template=docx/docx-show.typ --lua-filter=docx/docx-custom-properties.lua --lua-filter=docx/docx-keywords.lua -o docx/test.typ", depends-on = "copy-to-docx"}
+render-docx-pre = { cmd = "pandoc -f docx -t typst docx/test.docx --template=docx/docx-show.typ --lua-filter=docx/filters/docx-custom-properties.lua --lua-filter=docx/filters/docx-keywords.lua -o docx/test.typ", depends-on = "copy-to-docx"}
 render-docx = { cmd = "typst compile docx/test.typ", depends-on = "render-docx-pre" }
 render-all = { depends-on = ["render-typst", "render-quarto", "render-myst", "render-docx"]}
 

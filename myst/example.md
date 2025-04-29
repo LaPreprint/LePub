@@ -26,6 +26,8 @@ exports:
     line_numbers: true
     theme_color: "#FF5733"
     margin_side: right
+    parts_data_availability: |
+      Data is available.
 ---
 
 ## Introduction

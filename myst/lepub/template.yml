@@ -41,7 +41,12 @@ parts:
   - id: declaration
   - id: data_availability
   - id: funding
-options:
+options:  
+  # - parts:
+  #   - id: parts_funding
+  #     type: string
+  #   - id: parts_data_availability
+  #     type: string
   - type: string
     id: theme_color
     description: Color used for the theme
@@ -59,4 +64,8 @@ options:
   - id: logo
     type: string
   - id: logo_position
+    type: string
+  - id: parts_funding
+    type: string
+  - id: parts_data_availability
     type: string
