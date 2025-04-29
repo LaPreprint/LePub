@@ -1,6 +1,7 @@
 #import "../lepub.typ": *
 #show: lepub.with(
   options: (
+    word-count: true,
     font-body: "libertinus serif",
     line-numbers: false,
     theme-color: "#FF5733",

@@ -1,4 +1,5 @@
 #import "@preview/pubmatter:0.2.0"
+#import "@preview/wordometer:0.1.4": word-count, total-words
 
 #let lepub(
   frontmatter: (),
@@ -31,7 +32,8 @@
       date-published: none,
       paper-size: "us-letter",
       funding: none,
-      data-availability: none
+      data-availability: none,
+      word-count: false
     )
 
   if (type(options) == array) {
@@ -96,6 +98,10 @@
   let theme = (color: theme-color, font: options.font-body)
   if (page-start != none) {counter(page).update(page-start)}
   state("THEME").update(theme)
+
+  if (options.word-count == true) {
+    show: word-count
+  }
 
   set page(
     paper: options.paper-size,
@@ -288,6 +294,19 @@
         #set par(justify: true)
         #set text(size: 7pt)
         #options.funding
+      ]
+    )},
+
+    // Word count
+    if options.at("word-count", default: false) == true {(
+      title: "Word count",
+      content: [
+        #set par(justify: true)
+        #set text(size: 7pt)
+        #word-count(total => [
+          Words: #total.words \
+          Characters: #total.characters
+        ])
       ]
     )}
   ).filter((m) => m != none)

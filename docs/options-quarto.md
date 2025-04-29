@@ -9,7 +9,7 @@
 
 :   **Type**: <span class="type type-string">string</span>  
     **Default**: `"apa"`  
-    **Options**: [Styles available natively in Typst](https://typst.app/docs/reference/model/bibliography/#styles)  
+    **Options**: [Styles available natively in Typst](https://typst.app/docs/reference/model/bibliography/#styles) or path to a `csl` file.
     **Description**: The style used for both the bibliography and the in-line citations.
 
 ### `font-body`
