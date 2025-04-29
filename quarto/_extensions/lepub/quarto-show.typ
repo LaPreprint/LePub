@@ -122,7 +122,7 @@
     paper-size: "$paper-size$",
   $endif$
   $if(word-count)$
-    word-count: "$word-count$",
+    word-count: $word-count$,
   $endif$
   )
 )
