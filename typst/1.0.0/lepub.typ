@@ -31,7 +31,10 @@
       date-accepted: none,
       date-published: none,
       paper-size: "us-letter",
-      parts: none,
+      parts: (
+        data-availability: none,
+        funding: none
+        ),
       word-count: false
     )
 
@@ -276,13 +279,15 @@
 
     // == Data Availability == //
     if options.at("parts", default: none) != none {(
-      if options.parts.at("data-availability", default: none) != none {(
-        title: "Data Availability",
-        content: [
-          #set par(justify: true)
-          #set text(size: 7pt)
-          #options.parts.data-availability
-        ],
+      if "data-availability" in options.parts {(
+        if options.parts.data-availability != none {(
+          title: "Data Availability",
+          content: [
+            #set par(justify: true)
+            #set text(size: 7pt)
+            #options.parts.data-availability
+          ],
+        )}
       )}
     )},
 

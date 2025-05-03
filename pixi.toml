@@ -12,11 +12,17 @@ copy-to-myst = "cp lepub.typ myst/lepub"
 copy-to-docx = "cp lepub.typ docx"
 copy = { depends-on = ["copy-to-typst", "copy-to-quarto", "copy-to-myst", "copy-to-docx"] }
 render-typst = { cmd = "typst compile typst/1.0.0/template/from-manual.typ --root ..", depends-on = "copy" }
-render-quarto = { cmd = "quarto render quarto/example.qmd", depends-on = "copy" }
-render-myst = { cmd = "myst build myst/example.md", depends-on = "copy" }
-render-docx-pre = { cmd = "pandoc -f docx -t typst docx/test.docx --template=docx/docx-show.typ --lua-filter=docx/filters/docx-custom-properties.lua --lua-filter=docx/filters/docx-keywords.lua -o docx/test.typ", depends-on = "copy-to-docx"}
-render-docx = { cmd = "typst compile docx/test.typ", depends-on = "render-docx-pre" }
-render-all = { depends-on = ["render-typst", "render-quarto", "render-myst", "render-docx"]}
+# render-quarto = { cmd = "quarto render quarto/example.qmd", depends-on = "copy" }
+# render-myst = { cmd = "myst build myst/example.md", depends-on = "copy" }
+# render-docx-pre = { cmd = "pandoc -f docx -t typst docx/test.docx --template=docx/docx-show.typ --lua-filter=docx/filters/docx-custom-properties.lua --lua-filter=docx/filters/docx-keywords.lua -o docx/test.typ", depends-on = "copy-to-docx"}
+# render-docx = { cmd = "typst compile docx/test.typ", depends-on = "render-docx-pre" }
+# render-all = { depends-on = ["render-typst", "render-quarto", "render-myst", "render-docx"]}
+test-quarto = { cmd = "deno run --allow-run --allow-read tests/quarto.js", depends-on = "copy-to-quarto"}
+test-typst = { cmd = "deno run --allow-run --allow-read tests/typst.js", depends-on = "copy-to-typst"}
+test-myst = { cmd = "deno run --allow-run --allow-read tests/myst.js", depends-on = "copy-to-myst" }
+test-docx = { cmd = "deno run --allow-run --allow-read tests/docx.js", depends-on = "copy-to-docx" }
+tests = { depends-on = ["test-typst", "test-quarto", "test-myst", "test-docx"] }
+
 
 [tasks.rename]
 args = ["new-name"]
@@ -29,4 +35,5 @@ mkdocs-material = ">=9.6.12,<10"
 mystmd = ">=1.3.25,<2"
 mkdocs-git-revision-date-localized-plugin = ">=1.2.9,<2"
 pandoc = ">=3.6.4,<4"
+deno = ">=2.3.1,<2.4"
 # quarto = ">=1.7.0,<2"
